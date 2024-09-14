@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Todos</h1>
+  <app-todo-table [todos]="allTodos"></app-todo-table>
+
+  <form (submit)="addTodo()">
+    <input [(ngModel)]="newTodoTask" placeholder="Enter a task" type="text" name="newTodoTask">
+    <input [(ngModel)]="newTodoDate" name="newTodoDueDate" type="date">
+    <input [(ngModel)]="newTodoPriority" name="newTodoDueDate" type="number">
+    <button>Add</button>
+
+  </form>
+</div>
