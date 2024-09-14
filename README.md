@@ -45,7 +45,7 @@ In a new terminal window, navigate to the Angular application directory and run:
 
 ### 1. Access the Application
 
-- Open your browser and go to [http://localhost:4200] (default Angular port).
+- Open your browser and go to [http://localhost:4200](http://localhost:4200) (default Angular port).
 
 ### 2. Manage Tasks
 
@@ -53,4 +53,4 @@ In a new terminal window, navigate to the Angular application directory and run:
 
 ### 3. API Endpoints
 
-- Interact with the API at [http://localhost:3000/todos] for CRUD operations.
+- Interact with the API at [http://localhost:3000/todos](http://localhost:3000/todos) for CRUD operations.
