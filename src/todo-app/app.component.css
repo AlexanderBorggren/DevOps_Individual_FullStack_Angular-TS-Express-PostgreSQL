@@ -1,0 +1,78 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #FFFFFF;
+}
+
+.container {
+  width: 600px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  font-family: 'Helvetica Neue', sans-serif;
+  color: #333;
+  margin: 50px auto;
+}
+
+h1 {
+  font-weight: 500;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+
+input[type="text"], input[type="date"], input[type="number"] {
+  padding: 10px;
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+input[type="text"]:focus, input[type="date"]:focus, input[type="number"]:focus {
+  border-color: #4CAF50;
+  outline: none;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.2);
+}
+
+button {
+  background-color: rgba(11, 116, 190, 0.9);
+  color: white;
+  border: none;
+  border-radius: 12px 12px 12px 12px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-family: 'Helvetica Neue', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background-color: #1c4b81;}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+  }
+
+  form {
+    flex-direction: column;
+  }
+
+  input[type="text"], input[type="date"], input[type="number"], button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}

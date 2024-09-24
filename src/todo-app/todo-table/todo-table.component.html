@@ -1,0 +1,33 @@
+<table>
+  <thead>
+  <tr>
+    <th>Todo</th>
+    <th>Created</th>
+    <th>Due</th>
+    <th>Priority</th>
+    <th>Complete</th>
+    <th>Remove</th>
+  </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngIf="todos.length === 0">
+      <td colspan="4">
+        Nothing to do today!
+      </td>
+    </tr>
+
+  <tr *ngFor="let todo of todos" [ngClass]="{'completed': todo.completed}">
+
+    <td>{{ todo.task }}</td>
+    <td>{{ todo.created | date }}</td>
+    <td>{{ todo.dateDue | date }}</td>
+    <td>{{ todo.priority }}</td>
+    <td><input (change)="toggleTodoCompletedState(todo)" type="checkbox" [checked]="todo.completed"></td>
+    <td><span class="trash-icon" (click)="removeTodo(todo)">🗑️</span></td>
+
+  </tr>
+
+  </tbody>
+
+</table>

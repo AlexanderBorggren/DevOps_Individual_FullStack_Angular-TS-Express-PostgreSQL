@@ -1,7 +1,7 @@
 import express, { Request, Response } from 'express';
 import cors from 'cors';
 import { AppDataSource } from './Database';
-import {Todo} from "./entities/Todo";
+import {Todo} from "../models/Todo.ts";
 
 const app = express();
 app.use(cors());
@@ -10,7 +10,7 @@ app.use(express.json());
 AppDataSource.initialize()
   .then(() => {
     app.listen(3000, () => {
-      console.log('Server started on port 3000');
+      console.log('Server started on port 3000', process.env.DB_DATABASE);
       console.log('Database has been initialized!');
 
       const todoRepository = AppDataSource.getRepository(Todo);
