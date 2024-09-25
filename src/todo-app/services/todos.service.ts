@@ -2,12 +2,15 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {IToDo} from "../../../models/interfaces/IToDo";
 import {map, Observable} from "rxjs";
+import * as dotenv from "dotenv";
+import {join} from "path";
 
+dotenv.config({ path: join(__dirname, '../../../.env') });
 @Injectable({
   providedIn: 'root'
 })
 export class TodosService {
-  baseUrl = 'http://localhost:3000';
+  baseUrl = process.env['SERVER_URL']
 
   constructor(private http: HttpClient) { }
 

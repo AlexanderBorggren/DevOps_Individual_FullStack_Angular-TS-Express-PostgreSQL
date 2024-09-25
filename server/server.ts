@@ -10,7 +10,7 @@ app.use(express.json());
 AppDataSource.initialize()
   .then(() => {
     app.listen(3000, () => {
-      console.log('Server started on port 3000', process.env.DB_DATABASE);
+      console.log('Server started on port 3000');
       console.log('Database has been initialized!');
 
       const todoRepository = AppDataSource.getRepository(Todo);

@@ -5,6 +5,6 @@ export interface IToDo {
     priority: number;
     completed: boolean;
     created: Date;
-    modified: Date;
-    deleted: Date;
+    modified?: Date;
+    deleted?: Date;
 }
