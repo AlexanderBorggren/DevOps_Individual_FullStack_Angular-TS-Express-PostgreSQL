@@ -1,0 +1,17 @@
+FROM node:20-alpine AS build-server
+WORKDIR /usr/local/server
+
+COPY server/package.json ./
+COPY server/package-lock.json ./
+RUN npm install
+
+COPY ./server/ /usr/local/server
+COPY ./models/ /usr/local/models
+
+ENV NODE_PATH=/usr/local/server/node_modules
+
+RUN npm install typeorm reflect-metadata
+
+EXPOSE 3000
+
+CMD ["npm", "run", "serve"]
