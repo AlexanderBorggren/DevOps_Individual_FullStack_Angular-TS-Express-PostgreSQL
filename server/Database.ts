@@ -1,9 +1,7 @@
 import { DataSource } from "typeorm";
 import { Todo } from "../models/Todo";
-import * as dotenv from "dotenv";
-import {join} from "path";
 
-dotenv.config({ path: join(__dirname, "../.env") });
+
 console.log(process.env.DB_DATABASE);
 
 
