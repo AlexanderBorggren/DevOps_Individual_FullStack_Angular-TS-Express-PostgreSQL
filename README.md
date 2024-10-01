@@ -13,15 +13,15 @@ It also allows users to manage tasks with full CRUD (Create, Read, Update, Delet
 ### 2. Configure the Backend
 
 - Setup your environment with following settings for your database:
-DB_HOST=<your_database_host>
+`DB_HOST=<your_database_host>
 DB_PORT=5432
 DB_USERNAME=<your_database_username>
 DB_PASSWORD=<your_database_password>
-DB_DATABASE=<your_database_name>
+DB_DATABASE=<your_database_name>`
 
 - Update the database connection settings to match your PostgreSQL setup.
-- Environment file for server can be found under /server/.env
-- Toggle the toggleDevDotEnv const on inside /server/database.ts if using the .env file,
+- Environment file for server can be found under `/server/.env`
+- Toggle the toggleDevDotEnv const on inside `/server/database.ts` if using the .env file,
   else toggle off and configure in production environment.
 
 ### 3. Configure the Server Port
@@ -30,7 +30,7 @@ DB_DATABASE=<your_database_name>
 - Set your preferred port (default is `3000`).
 
 ### 4. Configure the Frontend
-- Open /Environments/ folder and adjust the server-URL to match the server, depending on development or production environment.
+- Open `/environments/` folder and adjust the server-URL to match the server, depending on development or production environment.
 
 ## Running the Application in Development
 
@@ -39,7 +39,7 @@ DB_DATABASE=<your_database_name>
 - Ensure PostgreSQL is online.
 - The database configuration is handled automatically by TypeORM.
 
-### 2. Start the Backend Server
+### 2. Start the Backend Server in Development
 
 In your terminal, navigate to the server directory and run:
 
@@ -52,6 +52,12 @@ In a new terminal window, navigate to the Angular application directory and run:
 
     cd app
     ng serve
+
+
+## Building and pushing the Application to production using docker
+
+`docker buildx build --platform linux/amd64 -t <docker_username>/<docker-file:version> -f dockerfile_app --push . `
+
 
 ## Usage
 
