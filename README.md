@@ -13,11 +13,15 @@ It also allows users to manage tasks with full CRUD (Create, Read, Update, Delet
 ### 2. Configure the Backend
 
 - Setup your environment with following settings for your database:
-`DB_HOST=<your_database_host>
-DB_PORT=5432
-DB_USERNAME=<your_database_username>
-DB_PASSWORD=<your_database_password>
-DB_DATABASE=<your_database_name>`
+
+
+Database environment variables:
+
+    DB_HOST=<your_database_host>
+    DB_PORT=5432
+    DB_USERNAME=<your_database_username>
+    DB_PASSWORD=<your_database_password>
+    DB_DATABASE=<your_database_name>
 
 - Update the database connection settings to match your PostgreSQL setup.
 - Environment file for server can be found under `/server/.env`
