@@ -7,20 +7,32 @@ It also allows users to manage tasks with full CRUD (Create, Read, Update, Delet
 
 ### 1. Install and Configure PostgreSQL
 
-- Install PostgreSQL on your host machine.
+- Install PostgreSQL on your enviornment.
 - Ensure PostgreSQL is running and accessible.
 
 ### 2. Configure the Backend
 
-- Navigate to the backend configuration file: `./server/database.ts`.
+- Setup your environment with following settings for your database:
+DB_HOST=<your_database_host>
+DB_PORT=5432
+DB_USERNAME=<your_database_username>
+DB_PASSWORD=<your_database_password>
+DB_DATABASE=<your_database_name>
+
 - Update the database connection settings to match your PostgreSQL setup.
+- Environment file for server can be found under /server/.env
+- Toggle the toggleDevDotEnv const on inside /server/database.ts if using the .env file,
+  else toggle off and configure in production environment.
 
 ### 3. Configure the Server Port
 
 - Open `./server/server.ts`.
 - Set your preferred port (default is `3000`).
 
-## Running the Application
+### 4. Configure the Frontend
+- Open /Environments/ folder and adjust the server-URL to match the server, depending on development or production environment.
+
+## Running the Application in Development
 
 ### 1. Start the PostgreSQL Database
 
