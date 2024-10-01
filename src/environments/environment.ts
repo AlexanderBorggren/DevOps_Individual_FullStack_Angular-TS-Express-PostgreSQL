@@ -1,4 +1,5 @@
 export const environment = {
-  production: false,
-  SERVER_URL: 'https://server-image-68vb.onrender.com'
+  production: true,
+  apiUrl: 'https://server-image-68vb.onrender.com'
+
 };

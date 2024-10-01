@@ -9,11 +9,11 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class TodosService {
-  baseUrl = environment.SERVER_URL;
-
+  baseUrl: string = environment.apiUrl;
   constructor(private http: HttpClient) { }
 
   getTodos(): Observable<IToDo[]> {
+    console.log(this.baseUrl)
     return this.http.get<{status: string, data: IToDo[]}>(`${this.baseUrl}/todos`)
       .pipe(
         map(res => res.data)
