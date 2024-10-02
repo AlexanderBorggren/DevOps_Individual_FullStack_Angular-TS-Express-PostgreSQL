@@ -6,7 +6,6 @@ import {Todo} from "../models/Todo.ts";
 const app = express();
 app.use(cors());
 app.use(express.json());
-
 AppDataSource.initialize()
   .then(() => {
     app.listen(3000, () => {

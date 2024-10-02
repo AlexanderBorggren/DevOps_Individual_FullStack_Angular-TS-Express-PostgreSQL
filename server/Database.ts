@@ -1,10 +1,12 @@
 import { DataSource } from "typeorm";
 import { Todo } from "../models/Todo";
+import dotenv from 'dotenv';
 
+const toggleDevDotEnv = false;
 
-console.log(process.env.DB_DATABASE);
-
-
+if (toggleDevDotEnv) {
+  dotenv.config();
+}
 export const AppDataSource = new DataSource({
   type: "postgres",
   host: process.env.DB_HOST,

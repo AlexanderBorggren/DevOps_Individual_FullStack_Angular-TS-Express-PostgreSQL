@@ -14,7 +14,6 @@ import {FormsModule} from "@angular/forms";
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit {
-  title = 'Todo App';
   allTodos: IToDo[] = [];
   newTodoTask: string = '';
   newTodoDate: string = '';

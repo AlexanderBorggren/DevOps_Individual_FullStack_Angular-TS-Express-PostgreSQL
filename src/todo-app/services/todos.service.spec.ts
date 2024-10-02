@@ -12,7 +12,7 @@ describe('TodosService', () => {
     TestBed.configureTestingModule({
       providers: [
         TodosService,
-        provideHttpClientTesting() // New way to provide HTTP testing in Angular 18
+        provideHttpClientTesting()
       ]
     });
 
@@ -21,7 +21,7 @@ describe('TodosService', () => {
   });
 
   afterEach(() => {
-    httpMock.verify(); // Verifies that no unmatched requests are outstanding
+    httpMock.verify();
   });
 
   it('should be created', () => {
