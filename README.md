@@ -7,27 +7,43 @@ It also allows users to manage tasks with full CRUD (Create, Read, Update, Delet
 
 ### 1. Install and Configure PostgreSQL
 
-- Install PostgreSQL on your host machine.
+- Install PostgreSQL on your enviornment.
 - Ensure PostgreSQL is running and accessible.
 
 ### 2. Configure the Backend
 
-- Navigate to the backend configuration file: `./server/database.ts`.
+- Setup your environment with following settings for your database:
+
+
+Database environment variables:
+
+    DB_HOST=<your_database_host>
+    DB_PORT=5432
+    DB_USERNAME=<your_database_username>
+    DB_PASSWORD=<your_database_password>
+    DB_DATABASE=<your_database_name>
+
 - Update the database connection settings to match your PostgreSQL setup.
+- Environment file for server should be placed inside `/server/.env` if running in development.
+- Toggle the toggleDevDotEnv const on inside `/server/database.ts` if using the .env file,
+  else toggle off and configure in production environment.
 
 ### 3. Configure the Server Port
 
 - Open `./server/server.ts`.
 - Set your preferred port (default is `3000`).
 
-## Running the Application
+### 4. Configure the Frontend
+- Open `/environments/` folder and adjust the server-URL to match the server, depending on development or production environment.
+
+## Running the Application in Development
 
 ### 1. Start the PostgreSQL Database
 
 - Ensure PostgreSQL is online.
 - The database configuration is handled automatically by TypeORM.
 
-### 2. Start the Backend Server
+### 2. Start the Backend Server in Development
 
 In your terminal, navigate to the server directory and run:
 
@@ -40,6 +56,13 @@ In a new terminal window, navigate to the Angular application directory and run:
 
     cd app
     ng serve
+
+
+## Building and pushing the Application and server to production using docker
+
+`docker buildx build --platform linux/amd64 -t <docker_username>/<docker-file:version> -f dockerfile_app --push . `
+`docker buildx build --platform linux/amd64 -t <docker_username>/<docker-file:version> -f dockerfile_server --push . `
+
 
 ## Usage
 
