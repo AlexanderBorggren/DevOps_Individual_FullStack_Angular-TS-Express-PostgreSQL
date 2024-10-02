@@ -24,7 +24,7 @@ Database environment variables:
     DB_DATABASE=<your_database_name>
 
 - Update the database connection settings to match your PostgreSQL setup.
-- Environment file for server can be found under `/server/.env`
+- Environment file for server should be placed inside `/server/.env` if running in development.
 - Toggle the toggleDevDotEnv const on inside `/server/database.ts` if using the .env file,
   else toggle off and configure in production environment.
 
