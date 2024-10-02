@@ -6,5 +6,4 @@ export interface IToDo {
     completed: boolean;
     created: Date;
     modified?: Date;
-    deleted?: Date;
 }

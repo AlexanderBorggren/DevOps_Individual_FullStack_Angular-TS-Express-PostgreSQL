@@ -1,4 +1,4 @@
-import {Column, CreateDateColumn, DeleteDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn} from "../server/node_modules/typeorm";
+import {Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn} from "../server/node_modules/typeorm";
 import {IToDo} from "./interfaces/IToDo";
 
 @Entity()
@@ -24,6 +24,4 @@ export class Todo implements IToDo {
   @UpdateDateColumn()
   modified!: Date;
 
-  @DeleteDateColumn()
-  deleted!: Date;
 }
