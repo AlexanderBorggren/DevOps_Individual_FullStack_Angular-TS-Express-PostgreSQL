@@ -58,9 +58,10 @@ In a new terminal window, navigate to the Angular application directory and run:
     ng serve
 
 
-## Building and pushing the Application to production using docker
+## Building and pushing the Application and server to production using docker
 
 `docker buildx build --platform linux/amd64 -t <docker_username>/<docker-file:version> -f dockerfile_app --push . `
+`docker buildx build --platform linux/amd64 -t <docker_username>/<docker-file:version> -f dockerfile_server --push . `
 
 
 ## Usage
