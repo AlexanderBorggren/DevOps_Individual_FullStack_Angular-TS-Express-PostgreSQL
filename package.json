@@ -6,7 +6,8 @@
     "start": "concurrently \"ng serve\" \"cd server && npm run serve\"",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test:unit": "ng test --watch=false --browsers=ChromeHeadless --include='**/todo-table.component.spec.ts'"
+    "test:unit": "ng test --watch=false --browsers=ChromeHeadless --include='**/todo-table.component.spec.ts'",
+    "test:unit:watch": "ng test --watch=true --browsers=ChromeHeadless --include='**/todos.service.spec.ts'"
   },
   "private": true,
   "dependencies": {

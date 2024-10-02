@@ -1,9 +1,9 @@
 export interface IToDo {
-    id: number;
+    id?: number;
     task: string;
     dateDue: Date;
     priority: number;
     completed: boolean;
-    created: Date;
+    created?: Date;
     modified?: Date;
 }

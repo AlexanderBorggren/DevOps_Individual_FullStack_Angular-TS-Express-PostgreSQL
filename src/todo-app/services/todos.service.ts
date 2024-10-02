@@ -20,8 +20,8 @@ export class TodosService {
       )
   }
 
-  addTodo(newTodo: { dateDue: string; task: string; completed: boolean; priority: number | null }) {
-    return this.http.post(`${this.baseUrl}/todos`, newTodo);
+  addTodo(newTodo: Omit<IToDo, 'id' | 'created' | 'modified'>): Observable<IToDo> {
+    return this.http.post<IToDo>(`${this.baseUrl}/todos`, newTodo);
   }
 
   updateTodo(todo: IToDo) {
