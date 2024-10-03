@@ -26,7 +26,6 @@ export class AppComponent implements OnInit {
       .subscribe({
         next: (todos: IToDo[]) => {
           this.allTodos = todos;
-          console.log(todos);
         }
       });
   }
@@ -46,20 +45,12 @@ export class AppComponent implements OnInit {
         mergeMap(() => this.todosService.getTodos()),
         tap((refreshedTodos: IToDo[]) => this.allTodos = refreshedTodos)
       )
-      .subscribe({
-        next: (result) => {
-          console.log(result);
-        }
-      });
+      .subscribe();
   }
 
   setTodoCompletedState(event: IToDo) {
     this.todosService.updateTodo(event)
-      .subscribe({
-        next: (result) => {
-          console.log(result);
-        }
-      });
+      .subscribe();
   }
 
   deleteTodo(event: IToDo) {
@@ -68,10 +59,6 @@ export class AppComponent implements OnInit {
         mergeMap(() => this.todosService.getTodos()),
         tap((refreshedTodos: IToDo[]) => this.allTodos = refreshedTodos)
       )
-      .subscribe({
-        next: (result) => {
-          console.log(result);
-        }
-      });
+      .subscribe();
   }
 }

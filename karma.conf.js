@@ -9,7 +9,7 @@ module.exports = function (config) {
       require('@angular-devkit/build-angular/plugins/karma')
     ],
     browsers: ['ChromeHeadless'],
-    singleRun: true,  // Set to true to run tests once and exit (useful for CI)
+    singleRun: true,
     restartOnFileChange: true,
     customLaunchers: {
       ChromeHeadlessCI: {
@@ -17,7 +17,7 @@ module.exports = function (config) {
         flags: ['--no-sandbox', '--disable-gpu']
       }
     },
-    reporters: ['progress', 'kjhtml'],  // Customize reporters as needed
+    reporters: ['progress', 'kjhtml'],
     coverageReporter: {
       type: 'html',
       dir: 'coverage/'
