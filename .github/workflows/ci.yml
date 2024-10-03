@@ -32,9 +32,10 @@ jobs:
           sudo apt-get install gh
 
       - name: Set up versioning
-        id: vars
+        env: ${{ toJson(github) }}
         run: |
-          echo "VERSION=1.0.$GITHUB_RUN_NUMBER" >> $GITHUB_ENV
+          VERSION=${GITHUB_RUN_NUMBER:-1}
+          echo "VERSION=1.0.${VERSION}" >> $GITHUB_ENV
           echo "TAG=borggren4/app_image:${{ env.VERSION }}" >> $GITHUB_ENV
           echo "SERVER_TAG=borggren4/server_image:${{ env.VERSION }}" >> $GITHUB_ENV
 
