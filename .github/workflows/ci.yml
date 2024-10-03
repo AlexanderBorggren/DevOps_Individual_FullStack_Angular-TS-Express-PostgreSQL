@@ -29,13 +29,15 @@ jobs:
 
       - name: Install GitHub CLI
         run: |
-          sudo apt-get install gh
+          sudo apt-get update
+          sudo apt-get install -y gh
+
+      - name: Authenticate GitHub CLI
+        run: echo ${{ secrets.GITHUB_TOKEN }} | gh auth login --with-token
 
       - name: Set up versioning
-        env: ${{ toJson(github) }}
         run: |
-          VERSION=${GITHUB_RUN_NUMBER:-1}
-          echo "VERSION=1.0.${VERSION}" >> $GITHUB_ENV
+          echo "VERSION=1.0.${{ github.run_number }}" >> $GITHUB_ENV
           echo "TAG=borggren4/app_image:${{ env.VERSION }}" >> $GITHUB_ENV
           echo "SERVER_TAG=borggren4/server_image:${{ env.VERSION }}" >> $GITHUB_ENV
 
