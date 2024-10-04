@@ -45,7 +45,6 @@ input[type="text"], input[type="date"], input[type="number"] {
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover effect */
 input[type="text"]:hover, input[type="date"]:hover, input[type="number"]:hover {
   border-color: #4c95af;
   box-shadow: 0 0 5px rgba(76, 130, 175, 0.2);
