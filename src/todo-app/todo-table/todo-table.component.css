@@ -16,9 +16,47 @@ th, td {
 }
 
 th {
-  background-color: rgb(49, 49, 49);
+  background-color: #34608d;
   color: white;
+  padding: 15px;
+  text-align: left;
+  font-size: 18px;
+  font-weight: 600;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+th:first-child {
+  border-top-left-radius: 8px;
+}
 
+th:last-child {
+  border-top-right-radius: 8px;
+}
+.bold-text {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  color: #000000;
+  transition: color 0.3s ease;
+}
+
+.checkbox-animation
+{
+  transition: transform 0.3s ease;
+}
+
+.checkbox-animation:hover
+{
+  transform: scale(1.5);
+}
+
+.bold-text:hover {
+  color: #2973b0;
+}
+
+tr {
+  text-decoration-color: #333333;
+  transition: background-color 0.3s;
 }
 
 tr:nth-child(even) {
@@ -45,6 +83,7 @@ span {
 
 }
 .trash-icon {
+  cursor: pointer;
   display: inline-block;
   transition: transform 0.3s ease;
 }

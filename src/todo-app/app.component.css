@@ -18,24 +18,13 @@ body {
   margin: 50px auto;
 }
 
-h1 {
+.TitleHeader {
+  font-size: 70px;
   font-weight: 600;
-  font-size: 32px;
-  margin-bottom: 20px;
-  color: #fff;
-
-  background: linear-gradient(135deg, #6b6bff, #f63c57);
-  padding: 20px;
-
-  border-radius: 8px;
-
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-
-  text-align: center;
-}
-
-h1:hover {
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  background-image: linear-gradient(to left, #3c659a, #93c4d3);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 
 form {
@@ -52,29 +41,43 @@ input[type="text"], input[type="date"], input[type="number"] {
   border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+input[type="text"]:hover, input[type="date"]:hover, input[type="number"]:hover {
+  border-color: #4c95af;
+  box-shadow: 0 0 5px rgba(76, 130, 175, 0.2);
 }
 
 input[type="text"]:focus, input[type="date"]:focus, input[type="number"]:focus {
-  border-color: #4CAF50;
+  border-color: #4c95af;
   outline: none;
-  box-shadow: 0 0 5px rgba(76, 175, 80, 0.2);
+  box-shadow: 0 0 5px rgba(76, 130, 175, 0.2);
 }
 
 button {
-  background-color: rgba(11, 116, 190, 0.9);
+  background: linear-gradient(to right, #3f8ab9, #068ed9);
   color: white;
   border: none;
-  border-radius: 12px 12px 12px 12px;
+  border-radius: 30px;
   padding: 12px 24px;
   font-size: 16px;
   font-family: 'Helvetica Neue', sans-serif;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  outline: none;
 }
 
 button:hover {
-  background-color: #1c4b81;}
+  background: linear-gradient(to right, #2a6b93, #295e96);
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: translateY(1px);
+}
 
 @media (max-width: 600px) {
   .container {
@@ -84,7 +87,6 @@ button:hover {
   form {
     flex-direction: column;
   }
-
   input[type="text"], input[type="date"], input[type="number"], button {
     width: 100%;
     margin-bottom: 10px;

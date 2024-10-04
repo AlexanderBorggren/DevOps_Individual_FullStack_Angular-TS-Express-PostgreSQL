@@ -1,4 +1,4 @@
-<table>
+<table class="todo-table">
   <thead>
   <tr>
     <th>Todo</th>
@@ -11,25 +11,22 @@
   </thead>
 
   <tbody>
-    <tr *ngIf="todos.length === 0">
-      <td colspan="4">
-        Nothing to do today!
-      </td>
-    </tr>
-
-  <tr *ngFor="let todo of todos" [ngClass]="{'completed': todo.completed}">
-
-    <td>{{ todo.task }}</td>
-    <td>{{ todo.created | date }}</td>
-    <td>{{ todo.dateDue | date }}</td>
-    <td>{{ todo.priority }}</td>
-    <td><input (change)="toggleTodoCompletedState(todo)" type="checkbox" [checked]="todo.completed"></td>
-    <td><span class="trash-icon" (click)="removeTodo(todo)">🗑️</span></td>
-
+  <tr *ngIf="todos.length === 0">
+    <td class="bold-text" colspan="6">Nothing to do today!</td>
   </tr>
 
+  <tr *ngFor="let todo of todos" [ngClass]="{'completed': todo.completed}">
+    <td class="bold-text">{{ todo.task }}</td>
+    <td class="bold-text">{{ todo.created | date }}</td>
+    <td class="bold-text">{{ todo.dateDue | date }}</td>
+    <td class="bold-text">{{ todo.priority }}</td>
+    <td>
+      <input class="checkbox-animation" (change)="toggleTodoCompletedState(todo)"
+             type="checkbox" [checked]="todo.completed"/>
+    </td>
+    <td>
+        <span class="trash-icon" (click)="removeTodo(todo)">🗑️</span>
+    </td>
+  </tr>
   </tbody>
-
 </table>
-
-
