@@ -38,11 +38,11 @@ jobs:
       - name: Authenticate GitHub CLI
         run: echo ${{ secrets.GITHUB_TOKEN }} | gh auth login --with-token
 
-      - name: Set up versioning
+      - name: Set up versioning number
         run: |
           echo "VERSION=1.0.${{ github.run_number }}" >> $GITHUB_ENV
 
-      - name: Set up versioning 2
+      - name: Set up versioning tags
         run: |
           echo "TAG=borggren4/app_image:${{ env.VERSION }}" >> $GITHUB_ENV
           echo "SERVER_TAG=borggren4/server_image:${{ env.VERSION }}" >> $GITHUB_ENV
@@ -69,8 +69,7 @@ jobs:
           gh release create "${{ env.VERSION }}" \
             --title "Release ${{ env.VERSION }}" \
             --notes "Automated release for version ${{ env.VERSION }}" \
-            --generate-notes \
-            --draft
+            --generate-notes
 
       - name: Notify Render
         run: |
