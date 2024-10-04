@@ -38,6 +38,9 @@ jobs:
       - name: Set up versioning
         run: |
           echo "VERSION=1.0.${{ github.run_number }}" >> $GITHUB_ENV
+
+      - name: Set up versioning 2
+        run: |
           echo "TAG=borggren4/app_image:${{ env.VERSION }}" >> $GITHUB_ENV
           echo "SERVER_TAG=borggren4/server_image:${{ env.VERSION }}" >> $GITHUB_ENV
 
