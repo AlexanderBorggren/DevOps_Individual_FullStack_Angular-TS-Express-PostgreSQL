@@ -52,13 +52,7 @@ jobs:
           docker run --privileged --rm tonistiigi/binfmt --install all
           docker buildx create --use
 
-
       - name: Build and push Docker image
-        env:
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          VERSION: 1.0.21
-          TAG: "${{ env.DOCKER_USERNAME }}/app_image:${{ env.VERSION }}"
-          SERVER_TAG: "${{ env.DOCKER_USERNAME }}/server_image:${{ env.VERSION }}"
         run: |
           docker buildx build --platform linux/amd64 -t ${{ env.TAG }} -f dockerfile_app . --push
           docker buildx build --platform linux/amd64 -t ${{ env.SERVER_TAG }} -f dockerfile_server . --push
