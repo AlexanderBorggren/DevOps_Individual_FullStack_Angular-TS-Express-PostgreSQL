@@ -2,7 +2,7 @@ import { DataSource } from "typeorm";
 import { Todo } from "../models/Todo";
 import dotenv from 'dotenv';
 
-const toggleDevDotEnv = false;
+const toggleDevDotEnv = true;
 
 if (toggleDevDotEnv) {
   dotenv.config();
