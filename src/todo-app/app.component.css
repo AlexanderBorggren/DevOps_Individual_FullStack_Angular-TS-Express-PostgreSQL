@@ -19,9 +19,23 @@ body {
 }
 
 h1 {
-  font-weight: 500;
-  font-size: 24px;
+  font-weight: 600;
+  font-size: 32px;
   margin-bottom: 20px;
+  color: #fff;
+
+  background: linear-gradient(135deg, #6b6bff, #f63c57);
+  padding: 20px;
+
+  border-radius: 8px;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+  text-align: center;
+}
+
+h1:hover {
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
 
 form {
