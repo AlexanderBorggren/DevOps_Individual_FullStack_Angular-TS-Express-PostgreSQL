@@ -73,5 +73,6 @@ jobs:
 
       - name: Notify Render
         run: |
-          curl -X POST "https://api.render.com/deploy/srv-crsoq3l2ng1s73bqvt40?key=${{ secrets.RENDER_DEPLOY_KEY_APP }}"
-          curl -X POST "https://api.render.com/deploy/srv-crsh30ogph6c738ten30?key=${{ secrets.RENDER_DEPLOY_KEY_SERVER }}"
+          curl -X POST "https://api.render.com/deploy/srv-crsoq3l2ng1s73bqvt40?key=${{ secrets.RENDER_DEPLOY_KEY_APP }}" \
+           -H "Content-Type: application/json" \
+           -d '{"serviceId":"srv-crsoq3l2ng1s73bqvt40","image":"${{ env.TAG }}"}'
