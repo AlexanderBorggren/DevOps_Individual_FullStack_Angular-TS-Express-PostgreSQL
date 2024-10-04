@@ -73,8 +73,8 @@ jobs:
 
       - name: Notify Render App
         run: |
-          curl -X POST "https://api.render.com/deploy/srv-crsoq3l2ng1s73bqvt40?key=${{ secrets.RENDER_DEPLOY_KEY_APP }}&imgURL=${{ env.IMAGE_URL }}%2F${{ env.TAG }}"
+          curl -X POST "https://api.render.com/deploy/srv-crsoq3l2ng1s73bqvt40?key=${{ secrets.RENDER_DEPLOY_KEY_APP }}&imgURL=docker.io%2F${{ env.TAG }}"
 
       - name: Notify Render Server
         run: |
-          curl -X POST "https://api.render.com/deploy/srv-crsh30ogph6c738ten30?key=${{ secrets.RENDER_DEPLOY_KEY_SERVER }}&imgURL=${{ env.IMAGE_URL }}%2F${{ env.TAG }}"
+          curl -X POST "https://api.render.com/deploy/srv-crsh30ogph6c738ten30?key=${{ secrets.RENDER_DEPLOY_KEY_SERVER }}&imgURL=docker.io%2F${{ env.SERVER_TAG }}"
