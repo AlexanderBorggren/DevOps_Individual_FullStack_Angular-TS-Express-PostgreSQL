@@ -1,5 +1,7 @@
 <div class="container">
 
+  <h1>Todos application</h1>
+
   <app-todo-table (deleted)="deleteTodo($event)" (changed)="setTodoCompletedState($event)" [todos]="allTodos"></app-todo-table>
 
   <form (submit)="addTodo()">
